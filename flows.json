@@ -1,0 +1,762 @@
+[
+    {
+        "id": "c42476a3aa2dd79c",
+        "type": "tab",
+        "label": "divers",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c5544de409dc3632",
+        "type": "group",
+        "z": "c42476a3aa2dd79c",
+        "name": "Essais divers",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5b14b666e62da67d",
+            "63b5b654057c4381",
+            "2d239cf871fcdd0f",
+            "754c40640a559f32",
+            "39449a18b64acb51",
+            "8bc9c72eb8f36ff2",
+            "d3d5c2188bb8b56e"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 928,
+        "h": 488
+    },
+    {
+        "id": "49a4091113d20136",
+        "type": "group",
+        "z": "c42476a3aa2dd79c",
+        "name": "Ecran LCD On / Off",
+        "style": {
+            "stroke": "#000000",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ea5ef01450d064c2",
+            "1a7ba77a039ff8a5",
+            "7d10fe7928d35c9e",
+            "5df172e294de3c89",
+            "f1dc521817c84612",
+            "496e4bb443b0bf0b",
+            "edd8784d0c5d79c2"
+        ],
+        "x": 34,
+        "y": 559,
+        "w": 682,
+        "h": 162
+    },
+    {
+        "id": "754c40640a559f32",
+        "type": "group",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "LCD-on-off",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0e2e65e40bcb2ac0",
+            "dbee32cce099fa83",
+            "d5dca54b28d74f18",
+            "0e22f5085190544e",
+            "3d4605eb10a3d1dc"
+        ],
+        "x": 374,
+        "y": 99,
+        "w": 562,
+        "h": 122
+    },
+    {
+        "id": "39449a18b64acb51",
+        "type": "group",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "Lire - DIVERS: 0xabcd",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e9a62d58d10aea04",
+            "991b73c0d7830977",
+            "a627048a1842edd0",
+            "347c975cf903685a",
+            "30ec269020be3cfd"
+        ],
+        "x": 374,
+        "y": 239,
+        "w": 562,
+        "h": 122
+    },
+    {
+        "id": "d3d5c2188bb8b56e",
+        "type": "group",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "Lire - DIVERS bit's",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3d490c4684163fca",
+            "142bf6609d8a7858",
+            "33a274fa6b859154",
+            "d1d7ba8380ba4e39",
+            "8cf65bc85374df94"
+        ],
+        "x": 374,
+        "y": 379,
+        "w": 562,
+        "h": 122
+    },
+    {
+        "id": "5b14b666e62da67d",
+        "type": "switch",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "Topic ?",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "LCD-on-off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "divers",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "divers-bit",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "0e22f5085190544e",
+                "8bc9c72eb8f36ff2"
+            ],
+            [
+                "347c975cf903685a"
+            ],
+            [
+                "8cf65bc85374df94"
+            ],
+            [
+                "2d239cf871fcdd0f"
+            ]
+        ],
+        "outputLabels": [
+            "LCD-on-off",
+            "",
+            null,
+            "Autres"
+        ]
+    },
+    {
+        "id": "63b5b654057c4381",
+        "type": "link in",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "Autres-topics-in",
+        "links": [
+            "bb5385e5fa6e8f58"
+        ],
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "5b14b666e62da67d"
+            ]
+        ]
+    },
+    {
+        "id": "2d239cf871fcdd0f",
+        "type": "debug",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "Autres topics",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 130,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0e2e65e40bcb2ac0",
+        "type": "inject",
+        "z": "c42476a3aa2dd79c",
+        "g": "754c40640a559f32",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "d5dca54b28d74f18"
+            ]
+        ]
+    },
+    {
+        "id": "dbee32cce099fa83",
+        "type": "debug",
+        "z": "c42476a3aa2dd79c",
+        "g": "754c40640a559f32",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d5dca54b28d74f18",
+        "type": "function",
+        "z": "c42476a3aa2dd79c",
+        "g": "754c40640a559f32",
+        "name": "Lire LCD from x1114",
+        "func": "// Node-RED function node pour générer la trame Modbus\nfunction generateModbusCommand() {\n    // Fonction de calcul CRC16 Modbus\n    function crc16(buffer) {\n        let crc = 0xFFFF;\n        for (let i = 0; i < buffer.length; i++) {\n            crc ^= buffer[i];\n            for (let j = 0; j < 8; j++) {\n                if (crc & 0x0001) {\n                    crc = (crc >> 1) ^ 0xA001;\n                } else {\n                    crc = crc >> 1;\n                }\n            }\n        }\n        return crc;\n    }\n\n    // Construction de la trame sans CRC\n    const command = [\n        0x01,       // Slave ID\n        0x03,       // Function code (03 - Read Holding Registers)\n        0x11,       // Register address high byte\n        0x14,       // Register address low byte\n        0x00,       // Quantity high byte (1 registre, 2 octets)\n        0x01        // Quantity low byte\n    ];\n\n    // Calcul du CRC\n    const crc = crc16(Buffer.from(command));\n    \n    // Ajout du CRC à la trame (en ordre inverse car little-endian)\n    command.push(crc & 0xFF);         // CRC low byte\n    command.push((crc >> 8) & 0xFF);  // CRC high byte\n\n    return Buffer.from(command);\n}\n\n// Envoi de la trame\nmsg.topic = \"LCD-on-off\"\nmsg.payload = generateModbusCommand();\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "3d4605eb10a3d1dc"
+            ]
+        ]
+    },
+    {
+        "id": "0e22f5085190544e",
+        "type": "buffer-parser",
+        "z": "c42476a3aa2dd79c",
+        "g": "754c40640a559f32",
+        "name": "LCD-on-off",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "buffer",
+                "name": "item2",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 5,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "bool",
+                "name": "Port Switch",
+                "offset": 3,
+                "length": 1,
+                "offsetbit": 3,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "bool",
+                "name": "LCD-on-off",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 4,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "dbee32cce099fa83"
+            ]
+        ]
+    },
+    {
+        "id": "3d4605eb10a3d1dc",
+        "type": "link out",
+        "z": "c42476a3aa2dd79c",
+        "g": "754c40640a559f32",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "305e1cac13589b0d"
+        ],
+        "x": 895,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e9a62d58d10aea04",
+        "type": "inject",
+        "z": "c42476a3aa2dd79c",
+        "g": "39449a18b64acb51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "a627048a1842edd0"
+            ]
+        ]
+    },
+    {
+        "id": "991b73c0d7830977",
+        "type": "debug",
+        "z": "c42476a3aa2dd79c",
+        "g": "39449a18b64acb51",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a627048a1842edd0",
+        "type": "function",
+        "z": "c42476a3aa2dd79c",
+        "g": "39449a18b64acb51",
+        "name": "Lire - DIVERS: x1078",
+        "func": "// Node-RED function node pour générer la trame Modbus\nfunction generateModbusCommand() {\n    // Fonction de calcul CRC16 Modbus\n    function crc16(buffer) {\n        let crc = 0xFFFF;\n        for (let i = 0; i < buffer.length; i++) {\n            crc ^= buffer[i];\n            for (let j = 0; j < 8; j++) {\n                if (crc & 0x0001) {\n                    crc = (crc >> 1) ^ 0xA001;\n                } else {\n                    crc = crc >> 1;\n                }\n            }\n        }\n        return crc;\n    }\n\n    // Construction de la trame sans CRC\n    const command = [\n        0x01,       // Slave ID\n        0x03,       // Function code (03 - Read Holding Registers)\n        0x10,       // Register address high byte (0x12)\n        0x70,       // Register address low byte (0xC4)\n        0x00,       // Quantity high byte (1 registre, 2 octets)\n        0x02        // Quantity low byte (1 registre, 2 octets)\n    ];\n\n    // Calcul du CRC\n    const crc = crc16(Buffer.from(command));\n    \n    // Ajout du CRC à la trame (en ordre inverse car little-endian)\n    command.push(crc & 0xFF);         // CRC low byte\n    command.push((crc >> 8) & 0xFF);  // CRC high byte\n\n    return Buffer.from(command);\n}\n\n// Envoi de la trame\nmsg.topic = \"divers\";\nmsg.payload = generateModbusCommand();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "30ec269020be3cfd"
+            ]
+        ]
+    },
+    {
+        "id": "347c975cf903685a",
+        "type": "buffer-parser",
+        "z": "c42476a3aa2dd79c",
+        "g": "39449a18b64acb51",
+        "name": "cell cell_voltage_overvoltage_protection",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint32be",
+                "name": "divers",
+                "offset": 3,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "991b73c0d7830977"
+            ]
+        ]
+    },
+    {
+        "id": "30ec269020be3cfd",
+        "type": "link out",
+        "z": "c42476a3aa2dd79c",
+        "g": "39449a18b64acb51",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "305e1cac13589b0d"
+        ],
+        "x": 895,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8bc9c72eb8f36ff2",
+        "type": "debug",
+        "z": "c42476a3aa2dd79c",
+        "g": "c5544de409dc3632",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3d490c4684163fca",
+        "type": "inject",
+        "z": "c42476a3aa2dd79c",
+        "g": "d3d5c2188bb8b56e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "33a274fa6b859154"
+            ]
+        ]
+    },
+    {
+        "id": "142bf6609d8a7858",
+        "type": "debug",
+        "z": "c42476a3aa2dd79c",
+        "g": "d3d5c2188bb8b56e",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "33a274fa6b859154",
+        "type": "function",
+        "z": "c42476a3aa2dd79c",
+        "g": "d3d5c2188bb8b56e",
+        "name": "Lire - DIVERs bit's",
+        "func": "// Node-RED function node pour générer la trame Modbus\nfunction generateModbusCommand() {\n    // Fonction de calcul CRC16 Modbus\n    function crc16(buffer) {\n        let crc = 0xFFFF;\n        for (let i = 0; i < buffer.length; i++) {\n            crc ^= buffer[i];\n            for (let j = 0; j < 8; j++) {\n                if (crc & 0x0001) {\n                    crc = (crc >> 1) ^ 0xA001;\n                } else {\n                    crc = crc >> 1;\n                }\n            }\n        }\n        return crc;\n    }\n\n    // Construction de la trame sans CRC\n    const command = [\n        0x01,       // Slave ID\n        0x03,       // Function code (03 - Read Holding Registers)\n        0x11,       // Register address high byte (0x11)\n        0x14,       // Register address low byte (0x14)\n        0x00,       // Quantity high byte (1 registre, 2 octets)\n        0x01        // Quantity low byte (1 registre, 2 octets)\n    ];\n\n    // Calcul du CRC\n    const crc = crc16(Buffer.from(command));\n    \n    // Ajout du CRC à la trame (en ordre inverse car little-endian)\n    command.push(crc & 0xFF);         // CRC low byte\n    command.push((crc >> 8) & 0xFF);  // CRC high byte\n\n    return Buffer.from(command);\n}\n\n// Envoi de la trame\nmsg.topic = \"divers-bit\";\nmsg.payload = generateModbusCommand();\n\n// Fonction pour extraire les 9 premiers bits de la réponse\nmsg.extractBits = function(response) {\n    if (response && response.length >= 5) {\n        const uint16Value = (response[3] << 8) | response[4];\n        let bitStates = {};\n        for (let i = 0; i < 9; i++) {\n            bitStates[`bit${i}`] = (uint16Value >> i) & 1;\n        }\n        return bitStates;\n    }\n    return null;\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "d1d7ba8380ba4e39"
+            ]
+        ]
+    },
+    {
+        "id": "d1d7ba8380ba4e39",
+        "type": "link out",
+        "z": "c42476a3aa2dd79c",
+        "g": "d3d5c2188bb8b56e",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "305e1cac13589b0d"
+        ],
+        "x": 895,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8cf65bc85374df94",
+        "type": "function",
+        "z": "c42476a3aa2dd79c",
+        "g": "d3d5c2188bb8b56e",
+        "name": "function 3",
+        "func": "if (msg.payload && msg.payload.length >= 5) {\n    msg.payload = msg.extractBits(msg.payload);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 460,
+        "wires": [
+            [
+                "142bf6609d8a7858"
+            ]
+        ]
+    },
+    {
+        "id": "ea5ef01450d064c2",
+        "type": "inject",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "Allumer écran",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "01 10 11 14 00 01 02 32 10 B0 E9",
+        "payloadType": "str",
+        "x": 150,
+        "y": 640,
+        "wires": [
+            [
+                "7d10fe7928d35c9e"
+            ]
+        ]
+    },
+    {
+        "id": "1a7ba77a039ff8a5",
+        "type": "inject",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "Eteindre écran",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "01 10 11 14 00 01 02 32 00 b1 25",
+        "payloadType": "str",
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "7d10fe7928d35c9e"
+            ]
+        ]
+    },
+    {
+        "id": "7d10fe7928d35c9e",
+        "type": "function",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "Conversion Hex",
+        "func": "// Convertit la chaîne hex en buffer\nmsg.payload = Buffer.from(msg.payload.split(' ').map(x => parseInt(x, 16)));\nreturn msg;",
+        "outputs": 1,
+        "x": 560,
+        "y": 620,
+        "wires": [
+            [
+                "5df172e294de3c89"
+            ]
+        ]
+    },
+    {
+        "id": "5df172e294de3c89",
+        "type": "link out",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "305e1cac13589b0d"
+        ],
+        "x": 675,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f1dc521817c84612",
+        "type": "change",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "01 10 11 14 00 01 02 32 10 B0 E9",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "7d10fe7928d35c9e"
+            ]
+        ]
+    },
+    {
+        "id": "496e4bb443b0bf0b",
+        "type": "switch",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "On / Off ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "f1dc521817c84612"
+            ],
+            [
+                "edd8784d0c5d79c2"
+            ]
+        ]
+    },
+    {
+        "id": "edd8784d0c5d79c2",
+        "type": "change",
+        "z": "c42476a3aa2dd79c",
+        "g": "49a4091113d20136",
+        "name": "Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "01 10 11 14 00 01 02 32 00 b1 25",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "7d10fe7928d35c9e"
+            ]
+        ]
+    }
+]
