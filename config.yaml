@@ -1,6 +1,6 @@
 name: "JK-BMS Modbus RS485"
 description: "Surveillance de JK-BMS type JK_PB2A16S15P via Modbus RS485 By Smartphoton"
-version: "1.0.0"
+version: "0.2"
 slug: "jk-bms_modbus_rs485"
 init: false
 arch:
