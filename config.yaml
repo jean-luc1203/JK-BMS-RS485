@@ -1,8 +1,13 @@
 name: "JK-BMS Modbus RS485"
 description: "Surveillance de JK-BMS type JK_PB2A16S15P via Modbus RS485 By Smartphoton"
-version: "0.2"
+version: "0.3"
 slug: "jk-bms_modbus_rs485"
+url: https://domosimple.eu/
+ingress: false
+ingress_stream: false
+panel_icon: mdi:sitemap
 init: false
+homeassistant: 2023.3.0
 arch:
   - aarch64
   - amd64
@@ -16,11 +21,22 @@ ports:
   1888/tcp: 1888
 ports_description:
   1888/tcp: "Interface Web Node-RED"
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+host_network: true
+auth_api: true
+uart: true
+map:
+  - config:rw
+  - media:rw
+  - share:rw
+  - ssl
 devices:
   - /dev/ttyUSB0
   - /dev/ttyAMA0
 options:
-  device: "/dev/ttyUSB0"
+  device: list(/dev/ttyUSB0|/dev/ttyUSB1)?
   baud_rate: 115200
   data_bits: 8
   parity: "N"
@@ -31,3 +47,4 @@ schema:
   data_bits: "int"
   parity: "str"
   stop_bits: "int"
+log_level: list(trace|debug|info|notice|warning|error|fatal)?
