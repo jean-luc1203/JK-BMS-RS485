@@ -1,10 +1,4 @@
 {
-  "name": "Smartphoton JK-BMS",
-  "udev": true,
-  "url": "https://github.com/jean-luc1203/JK-BMS-RS485/",
-  "maintainer": "Smartphoton"
-}
-{
   "name": "Dépôt Smartphoton JK-BMS",
   "url": "https://github.com/jean-luc1203/JK-BMS-RS485",
   "maintainer": "Smartphoton",
