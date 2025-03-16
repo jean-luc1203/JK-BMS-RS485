@@ -13,7 +13,7 @@ startup: application
 boot: auto
 uart: true
 ports:
-  1880/tcp: 1888
+  1888/tcp: 1888
 ports_description:
   1888/tcp: "Interface Web Node-RED"
 devices:
