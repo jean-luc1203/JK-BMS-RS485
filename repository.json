@@ -4,3 +4,17 @@
   "url": "https://github.com/jean-luc1203/JK-BMS-RS485/",
   "maintainer": "Smartphoton"
 }
+{
+  "name": "Dépôt Smartphoton JK-BMS",
+  "url": "https://github.com/jean-luc1203/JK-BMS-RS485",
+  "maintainer": "Smartphoton",
+  "addons": {
+    "bms_modbus_rs485": {
+      "name": "BMS Modbus RS485",
+      "description": "Surveillance de JK-BMS via Modbus RS485 by Smartphoton",
+      "version": "1.0.0",
+      "slug": "jk-bms_modbus_rs485",
+      "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"]
+    }
+  }
+}
